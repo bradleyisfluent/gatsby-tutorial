@@ -2,6 +2,8 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { signUp } from 'churchsuite-events-gatsby-plugin';
+import axios from 'axios';
+
 export const query = graphql`
 	query events {
 		allEvent {
@@ -38,6 +40,16 @@ export const query = graphql`
 
 // Step 2: Define your component
 const IndexPage = ({ data }) => {
+	// const headers = {
+	// 	'X-Account': 'thec3',
+	// 	'X-Application': 'zapier-api',
+	// 	'X-Auth': 'keyyzyy5l9uqicjacdtm',
+	// };
+	// const events = axios
+	// 	.get('https://api.churchsuite.co.uk/v1/calendar/events', {
+	// 		headers: headers,
+	// 	})
+	// 	.then(events => console.log(events));
 	return (
 		<main>
 			<title>Events</title>
