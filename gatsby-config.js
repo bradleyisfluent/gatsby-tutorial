@@ -4,8 +4,7 @@ module.exports = {
 	},
 	plugins: [
 		{
-			// resolve: 'churchsuite-events-gatsby-plugin',
-			resolve: require.resolve(`../churchsuite-events-gatsby-plugin`),
+			resolve: 'churchsuite-events-gatsby-plugin',
 			options: {
 				domain: 'thec3.churchsuite.co.uk',
 				date_start: '2019-10-20',
