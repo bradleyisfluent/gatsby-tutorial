@@ -1,6 +1,7 @@
 // Step 1: Import React
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import { signUp } from 'churchsuite-events-gatsby-plugin';
 export const query = graphql`
 	query events {
 		allEvent {
@@ -54,16 +55,12 @@ const IndexPage = ({ data }) => {
 					<p>embed signup: {JSON.stringify(m.signup_options)}</p>
 					<button
 						onClick={() =>
-							require
-								.resolve(
-									`../../../churchsuite-events-gatsby-plugin`
-								)
-								.signUp(m.identifier, {
-									first_name: 'Mark',
-									last_name: 'Davies',
-									mobile: '',
-									email: 'mark.davies@gmail.com',
-								})
+							signUp(m.identifier, {
+								first_name: 'Mark',
+								last_name: 'Davies',
+								mobile: '',
+								email: 'mark.davies@gmail.com',
+							})
 						}
 					>
 						Sign up
